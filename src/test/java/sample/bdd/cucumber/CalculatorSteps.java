@@ -3,8 +3,13 @@ package sample.bdd.cucumber;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.api.java8.En;
 
-public class CalculatorSteps {
+import java.util.Arrays;
+
+import org.junit.Assert;
+
+public class CalculatorSteps implements En{
 	private int input1;
 	private int input2;
 	private int result;
@@ -22,9 +27,9 @@ public class CalculatorSteps {
 		    result = new Calculator().add(input1,input2);
 		});
 
-		Then("^return result is (\\d+)$", (Integer arg1) -> {
+		Then("^return result is (\\d+)$", (Integer res) -> {
 		    
-		    
+		    Assert.assertArrayEquals(new Integer[] {result}, new Integer[] {res});
 		});
 
 	}
