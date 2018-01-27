@@ -1,4 +1,4 @@
-package sample.bdd.cucumber
+package sample.bdd.cucumber;
 
 public class Calculator{
 
